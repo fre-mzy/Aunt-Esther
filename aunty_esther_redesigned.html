@@ -1,0 +1,415 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="theme-color" content="#241537">
+  <meta name="description" content="A little note of love and appreciation for Aunty Esther.">
+  <title>For Aunty Esther 💜</title>
+  <style>
+    :root {
+      color-scheme: light;
+      --bg: #f8f4fb;
+      --surface: rgba(255,255,255,.88);
+      --surface-solid: #fff;
+      --ink: #291b38;
+      --muted: #82758e;
+      --purple: #7950a8;
+      --purple-deep: #523276;
+      --lavender: #eee5f7;
+      --lavender-2: #f5effa;
+      --gold: #e8b957;
+      --gold-soft: #fff5dc;
+      --line: #e9dfef;
+      --shadow: 0 18px 55px rgba(67, 39, 91, .09);
+      --radius: 26px;
+    }
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; scroll-padding-top: 20px; }
+    body {
+      margin: 0; min-height: 100vh; overflow-x: hidden; color: var(--ink);
+      background:
+        radial-gradient(ellipse at 8% 4%, rgba(214,190,238,.55), transparent 32rem),
+        radial-gradient(ellipse at 100% 30%, rgba(255,232,184,.35), transparent 28rem),
+        var(--bg);
+      font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+    }
+    button { font: inherit; }
+    button:focus-visible { outline: 3px solid var(--gold); outline-offset: 3px; }
+    .ambient { position: fixed; inset: 0; pointer-events: none; overflow: hidden; z-index: 0; }
+    .ambient::before, .ambient::after {
+      content: ""; position: absolute; border-radius: 50%; filter: blur(2px); opacity: .35;
+      border: 1px solid rgba(121,80,168,.16);
+    }
+    .ambient::before { width: 340px; height: 340px; top: 12%; right: -210px; }
+    .ambient::after { width: 250px; height: 250px; bottom: 4%; left: -175px; }
+    .wrap { position: relative; z-index: 1; width: min(100% - 32px, 680px); margin: 0 auto; padding: 28px 0 64px; }
+    .topline { display:flex; align-items:center; justify-content:space-between; gap:12px; margin: 0 2px 24px; }
+    .brand { display:flex; align-items:center; gap:10px; color:var(--muted); font-size:12px; font-weight:800; letter-spacing:.13em; text-transform:uppercase; }
+    .brand-mark { display:grid; place-items:center; width:34px; height:34px; border-radius:12px; background:var(--lavender); color:var(--purple-deep); font-size:17px; }
+    .date-pill { border:1px solid var(--line); background:rgba(255,255,255,.65); color:var(--muted); border-radius:999px; padding:8px 12px; font-size:11px; font-weight:700; }
+    .hero {
+      position:relative; overflow:hidden; border-radius:32px; padding:34px 26px 30px;
+      color:#fff; text-align:center; background:linear-gradient(145deg,#68438f 0%,#493064 58%,#352347 100%);
+      box-shadow:0 24px 65px rgba(65,39,88,.2);
+    }
+    .hero::before { content:""; position:absolute; width:270px; height:270px; border:1px solid rgba(255,255,255,.12); border-radius:50%; top:-160px; right:-65px; }
+    .hero::after { content:""; position:absolute; width:190px; height:190px; border:1px solid rgba(255,255,255,.10); border-radius:50%; bottom:-130px; left:-70px; }
+    .hero-content { position:relative; z-index:1; }
+    .eyebrow { color:#e8d8f6; font-size:11px; letter-spacing:.2em; text-transform:uppercase; font-weight:800; }
+    .hero-icon { width:66px; height:66px; display:grid; place-items:center; margin:20px auto 17px; border:1px solid rgba(255,255,255,.24); border-radius:23px; background:rgba(255,255,255,.11); font-size:31px; box-shadow:inset 0 1px 0 rgba(255,255,255,.15); }
+    h1 { margin:0 auto 12px; max-width:520px; font-family:Georgia,serif; font-size:clamp(34px,8vw,54px); line-height:1.04; font-weight:500; letter-spacing:-.04em; }
+    .hero p { max-width:410px; margin:0 auto; color:#e9dff1; font-size:15px; line-height:1.7; }
+    .hero-note { display:inline-flex; align-items:center; gap:7px; margin-top:23px; padding:9px 14px; border:1px solid rgba(255,255,255,.18); border-radius:999px; background:rgba(255,255,255,.09); color:#fff4d8; font-size:12px; font-weight:700; }
+    .intro { margin:26px 0 18px; text-align:center; }
+    .intro .kicker { color:var(--purple); font-size:11px; letter-spacing:.18em; font-weight:850; text-transform:uppercase; }
+    .intro h2 { margin:8px 0 6px; font:500 clamp(25px,6vw,34px)/1.2 Georgia,serif; }
+    .intro p { margin:0; color:var(--muted); font-size:13px; }
+    .letter {
+      position:relative; padding:26px 24px 23px; border:1px solid rgba(255,255,255,.9); border-radius:var(--radius);
+      background:var(--surface); box-shadow:var(--shadow); backdrop-filter:blur(12px);
+    }
+    .letter::before { content:"“"; position:absolute; top:8px; right:19px; color:#e9def2; font:90px/1 Georgia,serif; }
+    .letter-label { position:relative; color:var(--purple); font-size:10px; font-weight:850; letter-spacing:.16em; text-transform:uppercase; }
+    .letter-copy { position:relative; margin-top:17px; color:#4d4059; font:17px/1.85 Georgia,serif; white-space:pre-line; }
+    .letter-sign { margin-top:20px; padding-top:16px; border-top:1px solid var(--line); color:var(--purple-deep); font:italic 17px Georgia,serif; }
+    .section-heading { margin:34px 3px 14px; }
+    .section-heading span { display:block; color:var(--purple); font-size:10px; font-weight:850; letter-spacing:.18em; text-transform:uppercase; }
+    .section-heading h2 { margin:5px 0 0; font:500 26px/1.2 Georgia,serif; }
+    .section-heading p { margin:6px 0 0; color:var(--muted); font-size:13px; line-height:1.6; }
+    .card { padding:21px; border:1px solid var(--line); border-radius:var(--radius); background:var(--surface); box-shadow:var(--shadow); }
+    .promise-card { border-color:#ead9b5; background:linear-gradient(150deg,#fffdf8,#fff9eb); }
+    .promise-top { display:flex; align-items:flex-start; justify-content:space-between; gap:12px; }
+    .promise-top h3 { margin:0; font:500 22px/1.2 Georgia,serif; }
+    .promise-top p { margin:7px 0 0; max-width:420px; color:#82745d; font-size:13px; line-height:1.65; }
+    .promise-icon { flex:0 0 43px; width:43px; height:43px; display:grid; place-items:center; border-radius:15px; background:var(--gold-soft); font-size:21px; }
+    .week { display:grid; grid-template-columns:repeat(7,1fr); gap:6px; margin:20px 0 14px; }
+    .day { padding:10px 2px 9px; text-align:center; border-radius:13px; background:#f5eee1; color:#9b8b71; font-size:10px; font-weight:800; }
+    .day strong { display:block; margin-top:5px; font-size:14px; color:#8a7a61; }
+    .day.past { opacity:.48; }
+    .day.today { color:#fff; background:var(--purple); box-shadow:0 6px 15px rgba(82,50,118,.2); }
+    .day.today strong { color:#fff; }
+    .countdown-row { display:flex; align-items:center; justify-content:space-between; gap:12px; }
+    .countdown-label { color:#8b7d67; font-size:11px; font-weight:700; }
+    #left { color:var(--purple-deep); font-size:20px; font-weight:850; font-variant-numeric:tabular-nums; letter-spacing:-.03em; }
+    .progress { height:8px; margin:11px 0 14px; border-radius:99px; overflow:hidden; background:#f0e6d5; }
+    .progress i { display:block; width:0; height:100%; border-radius:99px; background:linear-gradient(90deg,#8a63ad,#e4b85d); transition:width .7s ease; }
+    .nudge { padding:13px 14px; border-radius:15px; background:rgba(255,255,255,.7); color:#75664f; font:italic 14px/1.55 Georgia,serif; }
+    .payment-title { margin:20px 0 9px; color:#76684f; font-size:10px; font-weight:850; letter-spacing:.15em; text-transform:uppercase; }
+    .account { display:flex; align-items:center; justify-content:space-between; gap:10px; margin-top:9px; padding:13px; border:1px solid #eee3d0; border-radius:16px; background:rgba(255,255,255,.82); }
+    .account-name { display:block; color:#8d7d65; font-size:10px; font-weight:800; letter-spacing:.12em; text-transform:uppercase; }
+    .account-number { display:block; margin-top:3px; color:#33263f; font-size:19px; font-weight:850; letter-spacing:.06em; user-select:all; }
+    .btn { display:inline-flex; align-items:center; justify-content:center; gap:8px; border:0; border-radius:14px; padding:12px 16px; cursor:pointer; font-size:12px; font-weight:800; transition:transform .18s, box-shadow .18s, background .18s; }
+    .btn:active { transform:scale(.97); }
+    .btn-purple { color:#fff; background:var(--purple-deep); box-shadow:0 7px 16px rgba(82,50,118,.16); }
+    .btn-purple:hover { background:#67418d; }
+    .btn-gold { color:#493517; background:#edc875; box-shadow:0 7px 16px rgba(185,137,48,.15); }
+    .btn-soft { color:var(--purple-deep); background:var(--lavender); }
+    .wide { width:100%; margin-top:16px; padding:15px; font-size:13px; }
+    .feedback { display:none; margin-top:13px; padding:12px; border-radius:14px; color:#5c3c79; background:#f0e8f7; text-align:center; font-size:13px; font-weight:750; line-height:1.5; }
+    .blessings { display:grid; grid-template-columns:repeat(3,1fr); gap:9px; }
+    .blessing { min-height:118px; padding:13px 9px; border:1px dashed #d8c8e5; border-radius:17px; background:#f8f3fb; color:var(--purple-deep); cursor:pointer; font-size:12px; font-weight:800; line-height:1.4; }
+    .blessing .emoji { display:block; margin-bottom:8px; font-size:22px; }
+    .blessing.revealed { grid-column:1/-1; min-height:85px; border-style:solid; background:var(--lavender); font:italic 17px/1.55 Georgia,serif; }
+    .agenda-list { display:grid; gap:9px; }
+    .agenda-item { display:flex; align-items:center; gap:11px; width:100%; padding:13px 14px; border:1px solid var(--line); border-radius:15px; background:#fff; color:#51445d; text-align:left; cursor:pointer; font-size:13px; font-weight:650; line-height:1.45; }
+    .check { display:grid; flex:0 0 23px; width:23px; height:23px; place-items:center; border:1.5px solid #cdbbdd; border-radius:8px; color:#fff; font-size:13px; }
+    .agenda-item.done { color:#93889b; background:#f8f5fa; text-decoration:line-through; }
+    .agenda-item.done .check { border-color:var(--purple); background:var(--purple); }
+    .hug-card { text-align:center; }
+    .hug-emoji { margin:4px 0 7px; font-size:52px; filter:drop-shadow(0 7px 10px rgba(82,50,118,.12)); }
+    .hug-card p { margin:0 0 15px; color:var(--muted); font-size:13px; }
+    #hugt { margin:13px 0 0; color:var(--purple-deep); font-size:12px; font-weight:800; }
+    .closing { margin-top:30px; padding:24px 18px; border-radius:25px; color:#fff; text-align:center; background:linear-gradient(140deg,#654286,#3f2a55); box-shadow:var(--shadow); }
+    .closing .heart { font-size:26px; }
+    .closing h2 { margin:9px 0 7px; font:500 25px Georgia,serif; }
+    .closing p { margin:0 auto 16px; max-width:390px; color:#e4d8ed; font-size:13px; line-height:1.6; }
+    .footer { padding:22px 0 0; color:#9b8fa4; text-align:center; font-size:11px; }
+    .float { position:fixed; z-index:5; pointer-events:none; animation:floatUp 5s ease-out forwards; }
+    .confetti { position:fixed; z-index:5; top:-35px; pointer-events:none; animation:fall 3.4s ease-in forwards; }
+    @keyframes floatUp { to { transform:translateY(-105vh) rotate(28deg); opacity:0; } }
+    @keyframes fall { to { transform:translateY(110vh) rotate(540deg); opacity:0; } }
+    @media (max-width:480px) {
+      .wrap { width:min(100% - 22px,680px); padding-top:17px; }
+      .hero { padding:29px 19px 25px; border-radius:27px; }
+      .letter { padding:23px 19px 20px; }
+      .letter-copy { font-size:16px; }
+      .card { padding:17px; border-radius:22px; }
+      .promise-top h3 { font-size:20px; }
+      .day { font-size:9px; }
+      .day strong { font-size:12px; }
+      .account { padding:11px; }
+      .account-number { font-size:17px; }
+      .account .btn { padding:11px 10px; font-size:11px; }
+      .blessings { gap:6px; }
+      .blessing { min-height:112px; font-size:11px; }
+      #left { font-size:17px; }
+    }
+    @media (prefers-reduced-motion:reduce) {
+      *,*::before,*::after { scroll-behavior:auto!important; animation-duration:.01ms!important; animation-iteration-count:1!important; transition-duration:.01ms!important; }
+    }
+  </style>
+</head>
+<body>
+  <div class="ambient" aria-hidden="true"></div>
+  <main class="wrap">
+    <header class="topline">
+      <div class="brand"><span class="brand-mark">💜</span> A little note of love</div>
+      <div class="date-pill" id="todayLabel">Made with love</div>
+    </header>
+
+    <section class="hero" aria-labelledby="heroTitle">
+      <div class="hero-content">
+        <div class="eyebrow">Especially for you</div>
+        <div class="hero-icon" aria-hidden="true">💌</div>
+        <h1 id="heroTitle">You are so loved,<br>Aunty Esther.</h1>
+        <p>A little reminder that you are appreciated more than words can say.</p>
+        <div class="hero-note">A message from Treasure <span aria-hidden="true">✦</span> With love</div>
+      </div>
+    </section>
+
+    <section class="intro">
+      <div class="kicker">A moment just for you</div>
+      <h2>Before anything else…</h2>
+      <p>There's something I really want you to know.</p>
+    </section>
+
+    <article class="letter">
+      <div class="letter-label">A note from my heart</div>
+      <div class="letter-copy" id="letterText">Aunty Esther,
+
+Thank you for being the kind of person who always has room in her heart for everyone. Your warmth, your wisdom and your prayers mean more to me than I can say.
+
+You are a true gift to this family, and I’m so proud to call you my aunt.
+
+I just wanted to brighten your week with a smile, because you deserve nothing less. 💜</div>
+      <div class="letter-sign">With all my love, Treasure 💜</div>
+    </article>
+
+    <div class="section-heading">
+      <span>A tiny reminder</span>
+      <h2>About this week's promise 🥹</h2>
+      <p>Aunty, you promised me something special this week — and I’m counting on you, because you never let me down. 💜</p>
+    </div>
+
+    <section class="card promise-card" aria-label="Weekly promise reminder">
+      <div class="promise-top">
+        <div>
+          <h3>Our little weekly countdown</h3>
+          <p>Just a playful reminder wrapped in plenty of love. No pressure — you know I appreciate you.</p>
+        </div>
+        <div class="promise-icon" aria-hidden="true">⏰</div>
+      </div>
+      <div class="week" id="week" aria-label="Days of the week"></div>
+      <div class="countdown-row">
+        <span class="countdown-label">Time left this week</span>
+        <strong id="left">--</strong>
+      </div>
+      <div class="progress" aria-hidden="true"><i id="bar"></i></div>
+      <div class="nudge" id="nudge" aria-live="polite"></div>
+
+      <div class="payment-title">Whenever you're ready 💸</div>
+      <div class="account">
+        <div><span class="account-name">Opay</span><strong class="account-number">9158253459</strong></div>
+        <button class="btn btn-soft copy-btn" data-number="9158253459">Copy number</button>
+      </div>
+      <div class="account">
+        <div><span class="account-name">PalmPay</span><strong class="account-number">8027473310</strong></div>
+        <button class="btn btn-soft copy-btn" data-number="8027473310">Copy number</button>
+      </div>
+      <button class="btn btn-gold wide" id="sent">I've sent it! 🎉</button>
+      <div class="feedback" id="sentmsg" role="status">Thank you so much, Aunty Esther! You’re a blessing 🥹💜</div>
+    </section>
+
+    <div class="section-heading">
+      <span>A little goodness</span>
+      <h2>Blessings for your week ✨</h2>
+      <p>Tap a card and claim a little blessing.</p>
+    </div>
+    <section class="card">
+      <div class="blessings">
+        <button class="blessing" data-message="May every good news find you first this week. 🌟"><span class="emoji">🌟</span>Blessing one</button>
+        <button class="blessing" data-message="May every door you knock on open wide. 🚪✨"><span class="emoji">🚪</span>Blessing two</button>
+        <button class="blessing" data-message="May your account never know a low balance. 😄💰"><span class="emoji">💰</span>Blessing three</button>
+      </div>
+    </section>
+
+    <div class="section-heading">
+      <span>One for the checklist</span>
+      <h2>Aunty's agenda for the week</h2>
+      <p>Small things, big smiles. Tick them off as you go.</p>
+    </div>
+    <section class="card">
+      <div class="agenda-list">
+        <button class="agenda-item"><span class="check" aria-hidden="true"></span><span>Smile, because you’re wonderful 😊</span></button>
+        <button class="agenda-item"><span class="check" aria-hidden="true"></span><span>Drink water and stay blessed 💧</span></button>
+        <button class="agenda-item" id="favouriteTask"><span class="check" aria-hidden="true"></span><span>Make your favourite person's week (hint: tap me) 💸</span></button>
+      </div>
+      <div class="feedback" id="thanks" role="status">Thank you Aunty Esther!! You’re the best in the world 🥹💜</div>
+    </section>
+
+    <div class="section-heading">
+      <span>Sending warmth</span>
+      <h2>One big virtual hug 🤗</h2>
+    </div>
+    <section class="card hug-card">
+      <div class="hug-emoji" id="hugn" aria-hidden="true">🤗</div>
+      <p>Because sometimes a hug says it all.</p>
+      <button class="btn btn-purple" id="hug">Send Aunty Esther a hug</button>
+      <div id="hugt" aria-live="polite">Hugs delivered: 0</div>
+    </section>
+
+    <section class="closing">
+      <div class="heart">💜</div>
+      <h2>Thank you in advance, Aunty.</h2>
+      <p>For your kindness, your love and all the ways you show up. May the goodness you give return to you in beautiful ways.</p>
+      <button class="btn btn-gold" id="big">Send you a little celebration ✨</button>
+    </section>
+    <footer class="footer">Made with love, just for Aunty Esther · Treasure 💜</footer>
+  </main>
+
+  <script>
+    const $ = (id) => document.getElementById(id);
+    const pad = (n) => String(n).padStart(2, "0");
+    const now = new Date();
+    const weekday = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"];
+    $("todayLabel").textContent = now.toLocaleDateString(undefined, { weekday: "short", month: "short", day: "numeric" });
+
+    const mondayIndex = (now.getDay() + 6) % 7;
+    const dayNames = ["Mon", "Tue", "Wed", "Thu", "Fri", "Sat", "Sun"];
+    const week = $("week");
+    dayNames.forEach((day, i) => {
+      const item = document.createElement("div");
+      item.className = "day" + (i < mondayIndex ? " past" : "") + (i === mondayIndex ? " today" : "");
+      item.innerHTML = `${day}<strong>${i === mondayIndex ? "Today" : i + 1}</strong>`;
+      week.appendChild(item);
+    });
+
+    const nudges = [
+      "Monday: fresh week, fresh blessings. Just planting the seed, Aunty 🌱",
+      "Tuesday: the week is warming up and so is my faith in you 😊",
+      "Wednesday: halfway there. Aunty Esther, I see you being generous already 👀",
+      "Thursday: the week is leaning forward, Aunty. So is my hope 🙏",
+      "Friday: it’s Friday, Aunty! The perfect day for good news to land 🎉",
+      "Saturday: the week is running out of days, but never of love 💜",
+      "Sunday: last day of the week! The grand finale is yours, Aunty 🥹"
+    ];
+    $("nudge").textContent = nudges[mondayIndex];
+
+    function updateCountdown() {
+      const current = new Date();
+      const end = new Date(current);
+      const daysUntilSunday = (7 - current.getDay()) % 7;
+      end.setDate(current.getDate() + daysUntilSunday + 1);
+      end.setHours(0, 0, 0, 0);
+      const seconds = Math.max(0, Math.floor((end - current) / 1000));
+      const days = Math.floor(seconds / 86400);
+      const hours = Math.floor((seconds % 86400) / 3600);
+      const minutes = Math.floor((seconds % 3600) / 60);
+      const secs = seconds % 60;
+      $("left").textContent = `${days}d ${pad(hours)}:${pad(minutes)}:${pad(secs)}`;
+      const start = new Date(end);
+      start.setDate(end.getDate() - 7);
+      $("bar").style.width = `${Math.min(100, Math.max(0, ((current - start) / (end - start)) * 100))}%`;
+    }
+    updateCountdown();
+    setInterval(updateCountdown, 1000);
+
+    async function copyNumber(number, button) {
+      try {
+        if (navigator.clipboard && window.isSecureContext) {
+          await navigator.clipboard.writeText(number);
+        } else {
+          const field = document.createElement("textarea");
+          field.value = number;
+          field.style.position = "fixed";
+          field.style.opacity = "0";
+          document.body.appendChild(field);
+          field.select();
+          const copied = document.execCommand("copy");
+          field.remove();
+          if (!copied) throw new Error("Copy unavailable");
+        }
+        button.textContent = "Copied ✓";
+      } catch (error) {
+        button.textContent = "Hold number to copy";
+      }
+      window.setTimeout(() => { button.textContent = "Copy number"; }, 2200);
+    }
+    document.querySelectorAll(".copy-btn").forEach((button) => {
+      button.addEventListener("click", () => copyNumber(button.dataset.number, button));
+    });
+
+    function floatHearts(count = 5) {
+      const symbols = ["💜", "💗", "✨", "🌸", "💖"];
+      for (let i = 0; i < count; i++) {
+        const el = document.createElement("span");
+        el.className = "float";
+        el.textContent = symbols[Math.floor(Math.random() * symbols.length)];
+        el.style.left = `${Math.random() * 94 + 3}vw`;
+        el.style.bottom = `${-20 - Math.random() * 30}px`;
+        el.style.fontSize = `${17 + Math.random() * 19}px`;
+        el.style.animationDuration = `${4 + Math.random() * 2}s`;
+        document.body.appendChild(el);
+        window.setTimeout(() => el.remove(), 6500);
+      }
+    }
+    function celebrate() {
+      const symbols = ["💸", "💰", "🎉", "✨", "💜", "🌟"];
+      for (let i = 0; i < 28; i++) {
+        const el = document.createElement("span");
+        el.className = "confetti";
+        el.textContent = symbols[Math.floor(Math.random() * symbols.length)];
+        el.style.left = `${Math.random() * 100}vw`;
+        el.style.fontSize = `${18 + Math.random() * 17}px`;
+        el.style.animationDelay = `${Math.random() * .8}s`;
+        document.body.appendChild(el);
+        window.setTimeout(() => el.remove(), 4600);
+      }
+    }
+
+    $("sent").addEventListener("click", () => {
+      $("sentmsg").style.display = "block";
+      $("sent").textContent = "You're amazing, Aunty! 💜";
+      celebrate();
+    });
+
+    document.querySelectorAll(".blessing").forEach((button) => {
+      button.addEventListener("click", () => {
+        button.classList.add("revealed");
+        button.textContent = button.dataset.message;
+        button.disabled = true;
+      });
+    });
+
+    document.querySelectorAll(".agenda-item").forEach((button) => {
+      button.addEventListener("click", () => {
+        if (button.classList.contains("done")) return;
+        button.classList.add("done");
+        button.querySelector(".check").textContent = "✓";
+        if (button.id === "favouriteTask") {
+          $("thanks").style.display = "block";
+          celebrate();
+        }
+      });
+    });
+
+    let hugs = 0;
+    const hugFaces = ["🤗", "🫶", "💞", "🥰", "💜"];
+    $("hug").addEventListener("click", () => {
+      hugs++;
+      $("hugt").textContent = `Hugs delivered: ${hugs}`;
+      $("hugn").textContent = hugFaces[hugs % hugFaces.length];
+      floatHearts(4);
+    });
+    $("big").addEventListener("click", () => {
+      celebrate();
+      $("big").textContent = "A big hug right back to you! 🥹💜";
+    });
+
+    if (!window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
+      window.setInterval(() => floatHearts(1), 2400);
+    }
+  </script>
+</body>
+</html>
