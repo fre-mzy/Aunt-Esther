@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>For Aunty Esther 💜</title>
+<style>
+:root{--bg:#f7f0ff;--card:#ffffff;--ink:#2a1a3d;--mute:#7a6592;--ac:#8a3ffc;--gold:#f5b700;--line:#e3d4f7;--bub:#ffffff;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#150d22;--card:#21143a;--ink:#f6eeff;--mute:#b9a3d6;--ac:#b98cff;--gold:#ffd23f;--line:#38245a;--bub:#261845}}
+:root[data-theme="dark"]{--bg:#150d22;--card:#21143a;--ink:#f6eeff;--mute:#b9a3d6;--ac:#b98cff;--gold:#ffd23f;--line:#38245a;--bub:#261845}
+*{box-sizing:border-box}
+html{scroll-padding-top:env(safe-area-inset-top,0px)}
+body{margin:0;background:radial-gradient(circle at 20% 0,var(--line),transparent 45%),var(--bg);color:var(--ink);font-family:Georgia,"Trebuchet MS",serif;min-height:100vh;overflow-x:hidden}
+.fl{position:fixed;pointer-events:none;z-index:0}
+.up{bottom:-30px;animation:up linear forwards}
+.dn{top:-40px;z-index:9;animation:dn linear forwards}
+@keyframes up{to{transform:translateY(-115vh) rotate(25deg);opacity:0}}
+@keyframes dn{to{transform:translateY(112vh) rotate(360deg)}}
+.screen{position:relative;z-index:1;max-width:520px;margin:0 auto;padding:24px 16px 48px}
+#chat{min-height:100vh;display:flex;flex-direction:column;justify-content:center}
+.who{display:flex;align-items:center;gap:10px;margin-bottom:14px;font-family:system-ui,sans-serif}
+.av{width:44px;height:44px;border-radius:50%;background:linear-gradient(135deg,var(--ac),var(--gold));display:grid;place-items:center;font-size:22px}
+.who small{display:block;color:var(--mute)}
+.b{background:var(--bub);border:1px solid var(--line);border-radius:18px 18px 18px 4px;padding:12px 14px;margin:8px 0;max-width:88%;font-family:system-ui,sans-serif;font-size:17px;animation:pop .35s ease both}
+.dots{display:inline-flex;gap:4px}
+.dots i{width:8px;height:8px;border-radius:50%;background:var(--mute);animation:bl 1s infinite}
+.dots i:nth-child(2){animation-delay:.2s}.dots i:nth-child(3){animation-delay:.4s}
+@keyframes bl{50%{opacity:.25;transform:translateY(-3px)}}
+@keyframes pop{from{opacity:0;transform:translateY(10px) scale(.96)}}
+button{font:inherit;font-family:system-ui,sans-serif;font-weight:700;border:0;border-radius:16px;padding:14px 20px;cursor:pointer;background:var(--ac);color:#fff;transition:transform .1s}
+button:active{transform:scale(.96)}
+.gold{background:var(--gold);color:#2b1b00}
+#open{margin-top:14px;display:none;animation:pop .4s both}
+#main{display:none;text-align:center}
+h1{font-size:clamp(30px,8.5vw,46px);line-height:1.1;margin:8px 0 18px;background:linear-gradient(90deg,var(--ac),var(--gold),var(--ac));background-size:200% 100%;-webkit-background-clip:text;background-clip:text;color:transparent;animation:sh 4s linear infinite}
+@keyframes sh{to{background-position:-200% 0}}
+#type{white-space:pre-wrap;text-align:left;font-size:19px;line-height:1.6;background:var(--card);border:1px solid var(--line);border-radius:22px;padding:20px;min-height:220px}
+#type::after{content:"|";animation:bl .8s infinite;color:var(--ac)}
+#type.done::after{content:""}
+#sign{margin-top:12px;font-style:italic;color:var(--mute);opacity:0;transition:opacity 1s}
+#more{display:none}
+.card{background:var(--card);border:1px solid var(--line);border-radius:22px;padding:18px;margin:18px 0;box-shadow:0 5px 0 var(--line)}
+.card h2{margin:0 0 12px;font-size:14px;letter-spacing:.08em;text-transform:uppercase;color:var(--mute);font-family:system-ui,sans-serif}
+.promise{border:2px solid var(--gold);box-shadow:0 5px 0 var(--gold)}
+.promise p{margin:0 0 12px;line-height:1.5;font-size:18px}
+.week{display:grid;grid-template-columns:repeat(7,1fr);gap:4px;margin:12px 0;font-family:system-ui,sans-serif}
+.week div{padding:8px 0;border-radius:10px;background:var(--bg);font-size:12px;font-weight:700;color:var(--mute)}
+.week .past{opacity:.45;text-decoration:line-through}
+.week .now{background:var(--ac);color:#fff;transform:scale(1.12)}
+#left{font-family:system-ui,sans-serif;font-weight:800;font-size:24px;color:var(--ac);font-variant-numeric:tabular-nums}
+.bar{height:14px;border-radius:99px;background:var(--bg);border:1px solid var(--line);overflow:hidden;margin:10px 0}
+.bar i{display:block;height:100%;width:0;background:linear-gradient(90deg,var(--ac),var(--gold));transition:width 1s}
+#nudge{background:var(--bg);border-radius:14px;padding:12px;font-style:italic;margin:12px 0;text-align:left;line-height:1.5}
+.acct{display:flex;align-items:center;justify-content:space-between;gap:10px;background:var(--bg);border:1px solid var(--line);border-radius:14px;padding:12px;margin-top:8px;text-align:left;font-family:system-ui,sans-serif}
+.acct b{display:block;font-size:16px}
+.acct span{font-size:20px;letter-spacing:.04em;user-select:all;-webkit-user-select:all}
+.acct button{padding:10px 12px;font-size:14px;white-space:nowrap}
+.msg{display:none;margin-top:12px;font-size:20px;color:var(--ac);font-weight:700;animation:pop .5s both}
+.grid{display:grid;grid-template-columns:repeat(3,1fr);gap:8px}
+.fc{background:var(--bg);border:2px dashed var(--line);color:var(--ink);padding:14px 6px;min-height:110px;font-size:14px;line-height:1.3}
+.fc.on{background:linear-gradient(135deg,var(--ac),var(--gold));color:#fff;border-style:solid;border-color:transparent}
+.ck{display:flex;width:100%;text-align:left;gap:10px;background:var(--bg);color:var(--ink);margin-top:8px;font-weight:600}
+.ck.on{text-decoration:line-through;opacity:.6}
+#hugn{font-size:34px;margin:6px 0}
+@media (prefers-reduced-motion:reduce){.fl{display:none}h1{animation:none}}
+</style>
+</head>
+<body>
+<div id="chat" class="screen">
+  <div class="who"><div class="av">💜</div><div><b>Treasure</b><small id="st">typing…</small></div></div>
+  <div id="msgs"></div>
+  <button id="open">Open my message 💌</button>
+</div>
+
+<div id="main" class="screen">
+  <h1>You are so loved, Aunty Esther</h1>
+  <div id="type"></div>
+  <div id="sign">With all my love, Treasure 💜</div>
+
+  <div id="more">
+    <div class="card promise">
+      <h2>⏰ Don’t forget this week’s promise</h2>
+      <p>Aunty Esther, you promised me something special this week 🥹 and I’m counting on you, because you never let me down.</p>
+      <div class="week" id="week"></div>
+      <div id="left">--</div>
+      <div class="bar"><i id="bar"></i></div>
+      <div id="nudge"></div>
+      <h2>Where to send it 💸</h2>
+      <div class="acct"><div><b>Opay</b><span>9158253459</span></div><button data-n="9158253459">Copy number</button></div>
+      <div class="acct"><div><b>PalmPay</b><span>8027473310</span></div><button data-n="8027473310">Copy number</button></div>
+      <button class="gold" id="sent" style="width:100%;margin-top:14px">I’ve sent it! 🎉</button>
+      <div class="msg" id="sentmsg">Thank you so much, Aunty Esther! You’re a blessing 🥹💜</div>
+    </div>
+
+    <div class="card">
+      <h2>Little blessings for your week (tap)</h2>
+      <div class="grid">
+        <button class="fc" data-t="May every good news find you first this week 🌟">Blessing 1</button>
+        <button class="fc" data-t="May every door you knock on open wide 🚪✨">Blessing 2</button>
+        <button class="fc" data-t="May your account never know a low balance 😄💰">Blessing 3</button>
+      </div>
+    </div>
+
+    <div class="card">
+      <h2>Aunty’s agenda for the week</h2>
+      <button class="ck" data-k="0">⬜ Smile, because you’re wonderful</button>
+      <button class="ck" data-k="1">⬜ Drink water and stay blessed 💧</button>
+      <button class="ck" data-k="2">⬜ Make your favourite person’s week (hint: tap me) 💸</button>
+      <div class="msg" id="thanks">Thank you Aunty Esther!! You’re the best in the world 🥹💜</div>
+    </div>
+
+    <div class="card">
+      <h2>Send a hug</h2>
+      <div id="hugn">🤗</div>
+      <button id="hug">Hug Aunty Esther</button>
+      <p id="hugt" style="color:var(--mute);margin:10px 0 0">Hugs delivered: 0</p>
+    </div>
+
+    <div class="card">
+      <button class="gold" id="big">Say thank you in advance 🙏</button>
+    </div>
+  </div>
+</div>
+
+<script>
+var $=function(i){return document.getElementById(i)};
+var p2=function(x){return String(x).padStart(2,"0")};
+var now=new Date(),hr=now.getHours();
+var gm=hr<12?"Good morning":hr<17?"Good afternoon":"Good evening";
+var sun=hr<12?"☀️":hr<17?"🌤️":"🌙";
+var msgs=[gm+", Aunty Esther "+sun,"I hope you’re doing wonderfully and feeling loved today 🥰","I made something special just for you. Tap below to open it 💌"];
+var box=$("msgs");
+
+function show(i){
+  if(i>=msgs.length){$("st").textContent="online";$("open").style.display="inline-block";return}
+  var d=document.createElement("div");d.className="b";
+  d.innerHTML='<span class="dots"><i></i><i></i><i></i></span>';
+  box.appendChild(d);
+  setTimeout(function(){d.textContent=msgs[i];setTimeout(function(){show(i+1)},650)},1000);
+}
+setTimeout(function(){show(0)},500);
+
+function heart(){
+  var e=["💜","💗","✨","🌸","💖"],el=document.createElement("span");
+  el.className="fl up";el.textContent=e[Math.floor(Math.random()*e.length)];
+  el.style.left=Math.random()*100+"vw";
+  el.style.fontSize=(16+Math.random()*22)+"px";
+  el.style.animationDuration=(6+Math.random()*5)+"s";
+  document.body.appendChild(el);
+  setTimeout(function(){el.remove()},11500);
+}
+setInterval(heart,700);
+
+function rain(){
+  var e=["💸","💰","🤑","💵","🎉"];
+  for(var i=0;i<36;i++){
+    var el=document.createElement("span");
+    el.className="fl dn";
+    el.textContent=e[Math.floor(Math.random()*e.length)];
+    el.style.left=Math.random()*100+"vw";el.style.fontSize="28px";
+    el.style.animationDuration=(2+Math.random()*3)+"s";
+    el.style.animationDelay=(Math.random()*1)+"s";
+    document.body.appendChild(el);
+    setTimeout(function(x){return function(){x.remove()}}(el),6500);
+  }
+}
+
+var text="Aunty Esther,\n\nThank you for being the kind of person who always has room in her heart for everyone. Your warmth, your wisdom and your prayers mean more to me than I can say.\n\nYou are a true gift to this family, and I’m so proud to call you my aunt.\n\nI just wanted to brighten your week with a smile, because you deserve nothing less. 💜";
+$("open").onclick=function(){
+  $("chat").style.display="none";$("main").style.display="block";
+  window.scrollTo(0,0);
+  var i=0,t=$("type");
+  (function go(){
+    if(i<text.length){t.textContent+=text.charAt(i++);setTimeout(go,28)}
+    else{t.className="done";$("sign").style.opacity=1;setTimeout(function(){$("more").style.display="block"},700)}
+  })();
+};
+
+var dn=["Mon","Tue","Wed","Thu","Fri","Sat","Sun"];
+var ti=(now.getDay()+6)%7;
+$("week").innerHTML=dn.map(function(d,i){return '<div class="'+(i<ti?"past":i===ti?"now":"")+'">'+d+'</div>'}).join("");
+var nudges=[
+ "Monday: fresh week, fresh blessings. Just planting the seed, Aunty 🌱",
+ "Tuesday: the week is warming up and so is my faith in you 😊",
+ "Wednesday: halfway there. Aunty Esther, I see you being generous already 👀",
+ "Thursday: the week is leaning forward, Aunty. So is my hope 🙏",
+ "Friday: it’s Friday, Aunty! The perfect day for good news to land 🎉",
+ "Saturday: the week is running out of days, but never of love 💜",
+ "Sunday: last day of the week! The grand finale is yours, Aunty 🥹"
+];
+$("nudge").textContent=nudges[ti];
+function lt(){
+  var n=new Date(),k=((1-n.getDay()+7)%7)||7,e=new Date(n);
+  e.setDate(n.getDate()+k);e.setHours(0,0,0,0);
+  var d=Math.max(0,Math.floor((e-n)/1000)),dd=Math.floor(d/86400),h=Math.floor(d%86400/3600);
+  $("left").textContent=dd+"d "+p2(h)+":"+p2(Math.floor(d%3600/60))+":"+p2(d%60)+" left this week";
+  var s=new Date(e);s.setDate(e.getDate()-7);
+  $("bar").style.width=Math.min(100,(n-s)/(e-s)*100)+"%";
+}
+lt();setInterval(lt,1000);
+
+document.querySelectorAll(".acct button").forEach(function(b){
+  b.onclick=function(){
+    var n=b.getAttribute("data-n");
+    try{navigator.clipboard.writeText(n).then(function(){b.textContent="Copied ✅"},function(){b.textContent="Hold the number to copy"})}catch(x){b.textContent="Hold the number to copy"}
+    setTimeout(function(){b.textContent="Copy number"},2500);
+  };
+});
+$("sent").onclick=function(){$("sentmsg").style.display="block";rain()};
+
+document.querySelectorAll(".fc").forEach(function(b){
+  b.onclick=function(){b.classList.add("on");b.textContent=b.getAttribute("data-t")};
+});
+document.querySelectorAll(".ck").forEach(function(b){
+  b.onclick=function(){
+    if(b.classList.contains("on"))return;
+    b.classList.add("on");b.textContent=b.textContent.replace("⬜","✅");
+    if(b.getAttribute("data-k")==="2"){$("thanks").style.display="block";rain()}
+  };
+});
+var hugs=0;
+$("hug").onclick=function(){
+  hugs++;$("hugt").textContent="Hugs delivered: "+hugs;
+  $("hugn").textContent=["🤗","🫶","💞","🥰"][hugs%4];
+  for(var i=0;i<3;i++)heart();
+};
+$("big").onclick=function(){rain();$("big").textContent="Thank you, Aunty Esther! 🥹💜"};
+</script>
+</body>
+</html>
